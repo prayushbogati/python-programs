@@ -132,8 +132,3 @@ class Game:
             if self.is_game_over():
                 print("Game over! No moves left")
                 break
-        
-
-
-game = Game()  
-game.run()
