@@ -1,12 +1,5 @@
-def sum(*nums):
-    """sums the given numbers"""
-    total = 0
-    for num in nums:
-        total += num
-    return total
+def sum(a, b):
+    return a + b
 
-try:
-    x = sum(1, 2, 4, "hi")
-    print(x)
-except:
-    print("Error!")
+x = sum(1, 2)
+print(x)
