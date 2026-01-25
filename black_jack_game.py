@@ -20,6 +20,7 @@ def runHit(userTotal):
     if userTotal > 21:
         print("You lose!")
         exit()
+    return userTotal
 
 
 if play == "y":
@@ -45,7 +46,7 @@ if play == "y":
             hitOrStand = input("Hit or stand: ").lower()
 
             if hitOrStand == "hit" or hitOrStand == "h":
-                runHit(userTotal)
+                userTotal = runHit(userTotal)
 
             elif hitOrStand == "stand" or hitOrStand == "s":
                 while True:
