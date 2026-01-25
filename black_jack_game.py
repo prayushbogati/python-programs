@@ -7,53 +7,78 @@ def generateRandomCard():
     index = random.choice(cards)
     return cards[index]
 
-def generateCardsSum(cards):
+def generateTotal(cards):
     total = 0
     for card in cards:
         total += card
     return total
 
+def runHit(userTotal):
+    userCardList.append(generateRandomCard())
+    userTotal += userCardList[len(userCardList) - 1]
+    print(userCardList, f"Total: {userTotal}")
+    if userTotal > 21:
+        print("You lose!")
+        exit()
+
+
 if play == "y":
 
-    userCardList = []
-    dealerCardList = []
-    
-    userCardList.append(generateRandomCard())
-    userCardList.append(generateRandomCard())
-
-    dealerCardList.append(generateRandomCard())
-    dealerCardList.append(generateRandomCard())
-    
-    userTotal = generateCardsSum(userCardList)
-    dealerTotal = generateCardsSum(dealerCardList)
-
-    print(userCardList, f"Total: {userTotal}")
-
-
     while True:
-        hitOrStand = input("Hit or stand: ").lower()
+        userCardList = []
+        dealerCardList = []
+        
+        userCardList.append(generateRandomCard())
+        userCardList.append(generateRandomCard())
 
-        if hitOrStand == "hit" or hitOrStand == "h":
-            userCardList.append(generateRandomCard())
-            userTotal += userCardList[len(userCardList) - 1]
-            print(userCardList, f"Total: {userTotal}")
-            if userTotal > 21:
-                print("You lose!")
-                break
+        dealerCardList.append(generateRandomCard())
+        print(dealerCardList, f"Dealer Total: {dealerCardList[0]}")
+        dealerCardList.append(generateRandomCard())
+        
+        userTotal = generateTotal(userCardList)
+        dealerTotal = generateTotal(dealerCardList)
 
-        elif hitOrStand == "stand" or hitOrStand == "s":
-            print(f"User Total: {userTotal}\nDealer Total: {dealerTotal}")
-            if userTotal > dealerTotal and userTotal <= 21:
-                print("You win!")
-            elif userTotal == dealerTotal:
-                print("Draw!")
+        print(userCardList, f"User Total: {userTotal}")
+
+        while True:
+            gameOver = False
+            hitOrStand = input("Hit or stand: ").lower()
+
+            if hitOrStand == "hit" or hitOrStand == "h":
+                runHit(userTotal)
+
+            elif hitOrStand == "stand" or hitOrStand == "s":
+                while True:
+                    if dealerTotal < 15: # this make it bit difficult as bot tries to make the total greater than 14
+                        dealerCardList.append(generateRandomCard())
+                        dealerTotal = generateTotal(dealerCardList)
+                        if dealerTotal > 21:
+                            print(f"Dealer total: {dealerTotal}. You win!")
+                            gameOver = True
+                            break
+                    if userTotal > dealerTotal:
+                        print("You win!")
+                        gameOver = True
+                        break
+                    if userTotal == dealerTotal:
+                        print("Game drawn!")
+                        gameOver = True
+                        break
+                    if userTotal < dealerTotal:
+                        print("You lose!")
+                        gameOver = True
+                        break
+                if gameOver:
+                    print(f"{userCardList} User Total: {userTotal}\n{dealerCardList} Dealer Total: {dealerTotal}")
+                    break
+
             else:
-                print("You lose!")
+                print("type correct input")
 
+        newGame = input("Play again? (y/n) ")
+        if newGame == "n":
+            print("Thanks for playing!")
             break
-
-        else:
-            print("type correct input")
 
 else:
     exit()
