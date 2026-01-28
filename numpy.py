@@ -1,4 +1,53 @@
 import numpy as np
+import random
+
+# np_array = np.array(list(map(int, input().split())))
+
+# print(np_array)
+
+# print(np.ones(5)) gives array with given no of ones
+# print(np.zeros(5)) gives array with given no of zeros
+
+# print(np.arange(5, 10, 2)) #gives array of range 5 to 10 with step 2 default 1 if not given
+
+# print(np.linspace(5, 15, 6)) gives array with given no. between two numbers similar to arange but above has gap and this has number of integers between a given range also includes the last el unlike in arange
+
+# print(np.random.randint(1, 10, size= 5)) # size arg only used for arrays not lists
+
+# print(np.random.rand(5)) # to generate random numbers from 0 to 1
+
+# print(np.empty(5)) # to create empty array with n capacity (here 5)
+
+
+# li = [1, 2, 12, 34, 76]
+# arr = np.array(li, dtype=np.int64)
+# print(arr[arr > 20])  #boolean indexing with conditions only in arrays not in lists (used to select elements or to modify them eg. arr[arr % 2 == 0] = 0 modifies the array and puts 0 in place of even numbers as below)
+# arr[arr % 2 == 0] = 0
+# print(arr)
+
+# slicing similar to lists and additional parameter step thats 1 by default eg. print(arr[1:4:2])
+
+# reversing array similar to before using array[::-1] since take whole array and step -1 to go to first...
+
+# array attributes
+# print(arr.ndim, arr.size, arr.shape, arr.dtype, arr.itemsize, arr.nbytes)
+# to make the array of itemSize 4bits, use arr = np.array(list, dtype = np.int32)
+
+
+# nD arrays 2d, 3d arrays
+# create empty arrays using ex. np.empty(2, 3) for 2d and ex. np.empty(2, 3, 2) for 3d
+# create pre-filled arrays using np.ones(), np.zeros() and 
+# np.full() using numpy_array = np.full((2, 2), 5) ---> this creates filled arr of 2r and 2c with val 5
+
+# access 2d arrays using arr[row, col] and 3d arrays using arr[matrix/layer, row, col]
+# modify using indexing and slicing
+
+# reshape 1d array to nD using np.reshape() method
+# np.reshape(arr_name, shape, order) shape is (row, col) for 2d and (layer, row, col) for 3d
+# np.reshape(arr_name, -1) shapes the arr into 1d array or use array.flatten(order(optional)) or np.ravel(array)
+
+
+
 # MATRICES
 
 # unlike arrays, matrices can't have more than 2 dimensions
