@@ -107,6 +107,6 @@ import random
         # and compare with another program using uFunc
 
 
-mathematical expressions represented as:
-2log(x): This indicates twice the natural logarithm of X. In NumPy, the np.log() function calculates the natural logarithm of each element in an array.
-e^2: Here, e represents Euler's number, which is approximately 2.71828. In NumPy, Euler's number is available as np.exp().
+# mathematical expressions represented as:
+# 2log(x): This indicates twice the natural logarithm of X. In NumPy, the np.log() function calculates the natural logarithm of each element in an array.
+# e^2: Here, e represents Euler's number, which is approximately 2.71828. In NumPy, Euler's number is available as np.exp().
