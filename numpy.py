@@ -88,3 +88,25 @@ import random
     #     ex.
     #         array1 = shape(6, 7)
     #         array2 = shape(6, 1)
+
+# numpy universal functions
+# get time using time() from time
+# ex:
+# import time
+
+# start = time.time()
+
+# array1 = [1, 2, 3, 4, 5]
+
+# for i in range(len(array1)):
+#     array1[i] += 10
+
+# end = time.time()
+
+# print("For loop time:", end - start)
+        # and compare with another program using uFunc
+
+
+mathematical expressions represented as:
+2log(x): This indicates twice the natural logarithm of X. In NumPy, the np.log() function calculates the natural logarithm of each element in an array.
+e^2: Here, e represents Euler's number, which is approximately 2.71828. In NumPy, Euler's number is available as np.exp().
