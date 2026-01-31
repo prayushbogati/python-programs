@@ -1,0 +1,115 @@
+import numpy as np
+import random
+
+# np_array = np.array(list(map(int, input().split())))
+
+# print(np_array)
+
+# print(np.ones(5)) gives array with given no of ones
+# print(np.zeros(5)) gives array with given no of zeros
+
+# print(np.arange(5, 10, 2)) #gives array of range 5 to 10 with step 2 default 1 if not given
+
+# print(np.linspace(5, 15, 6)) gives array with given no. between two numbers similar to arange but above has gap and this has number of integers between a given range also includes the last el unlike in arange
+
+# print(np.random.randint(1, 10, size= 5)) # size arg only used for arrays not lists
+
+# print(np.random.rand(5)) # to generate random numbers from 0 to 1
+
+# print(np.empty(5)) # to create empty array with n capacity (here 5)
+
+
+# li = [1, 2, 12, 34, 76]
+# arr = np.array(li, dtype=np.int64)
+# print(arr[arr > 20])  #boolean indexing with conditions only in arrays not in lists (used to select elements or to modify them eg. arr[arr % 2 == 0] = 0 modifies the array and puts 0 in place of even numbers as below)
+# arr[arr % 2 == 0] = 0
+# print(arr)
+
+# slicing similar to lists and additional parameter step thats 1 by default eg. print(arr[1:4:2])
+
+# reversing array similar to before using array[::-1] since take whole array and step -1 to go to first...
+
+# array attributes
+# print(arr.ndim, arr.size, arr.shape, arr.dtype, arr.itemsize, arr.nbytes)
+# to make the array of itemSize 4bits, use arr = np.array(list, dtype = np.int32)
+
+
+# nD arrays 2d, 3d arrays
+# create empty arrays using ex. np.empty(2, 3) for 2d and ex. np.empty(2, 3, 2) for 3d
+# create pre-filled arrays using np.ones(), np.zeros() and 
+# np.full() using numpy_array = np.full((2, 2), 5) ---> this creates filled arr of 2r and 2c with val 5
+
+# access 2d arrays using arr[row, col] and 3d arrays using arr[matrix/layer, row, col]
+# modify using indexing and slicing
+
+# reshape 1d array to nD using np.reshape() method
+# np.reshape(arr_name, shape, order) shape is (row, col) for 2d and (layer, row, col) for 3d
+# np.reshape(arr_name, -1) shapes the arr into 1d array or use array.flatten(order(optional)) or np.ravel(array)
+
+
+
+# MATRICES
+
+# unlike arrays, matrices can't have more than 2 dimensions
+
+# create matrices using np.array() or np.matrix()[not recommended though]
+# matrices are special as they can have  * and ** operations between them
+
+# using arrays there are methods like np.dot for matrix mul as np.matrix is not suggested 
+
+# transposition using np.transpose()
+
+# create identity matrix using np.eye(n) or np.identity(n)
+
+
+# array filtering
+    # 1. using boolean indexing as before..
+    # 2. using where methods
+    #     ex: 
+    #     array1 = np.array([[1,2,-1,-2,10,12,20],[1,2,3,-6,1,-10,-1]])
+    #     # replace negative values with 0
+    #     print(np.where(array1 > 0, array1, 0))
+    # 3. use np.any(arr_condition) to show any elements matching the condition using bool values
+    # 4. use np.all(arr_condition) to show if all elements match the condition
+    #         for 3 and 4, use another attribute 'axis' 0(for col) and 1(for row) to perform on rows and cols
+    # 5. np.stack((arr1, arr2, ..), axis) to merge arrays axis 0 for default merge and 1 for merge in cols (..lil confusing)
+    # 6. mask same as normal filtering using boolean indexing
+    # 7. use MaskedArray from numpy.ma as,
+    #     masked_arr = MaskedArray(array1, mask_condition) 
+    #     to mask the array and hide the elements satisfying the condition
+
+
+# broadcasting
+    # - method of performing operations on arrays with different dimensions
+    # - An array with a smaller shape is expanded to match the shape of a larger one
+    # - A set of dimension lengths is compatible when
+    #     one of them has a length of 1 or
+    #     they are equal
+    #     ex.
+    #         array1 = shape(6, 7)
+    #         array2 = shape(6, 1)
+
+# numpy universal functions
+# get time using time() from time
+# ex:
+# import time
+
+# start = time.time()
+
+# array1 = [1, 2, 3, 4, 5]
+
+# for i in range(len(array1)):
+#     array1[i] += 10
+
+# end = time.time()
+
+# print("For loop time:", end - start)
+        # and compare with another program using uFunc
+
+
+# mathematical expressions represented as:
+# 2log(x): This indicates twice the natural logarithm of X. In NumPy, the np.log() function calculates the natural logarithm of each element in an array.
+# e^2: Here, e represents Euler's number, which is approximately 2.71828. In NumPy, Euler's number is available as np.exp().
+
+
+
